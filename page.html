@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kadhy Touré - Mon Inspiration</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f9f5ff 0%, #f0e6ff 100%);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(106, 17, 203, 0.3);
+    }
+
+    .navbar button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 16px;
+      margin: 0 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      padding: 8px 15px;
+      border-radius: 20px;
+    }
+
+    .navbar button:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Sections */
+    .section {
+      display: none;
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero section */
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #6a11cb;
+      box-shadow: 0 8px 20px rgba(106, 17, 203, 0.3);
+    }
+
+    h1, h2 {
+      color: #6a11cb;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #d9b3ff;
+      margin-bottom: 30px;
+    }
+
+    /* Text styles */
+    .inspiration-text, .message-text, .vision-text, .citation-text {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    .highlight {
+      color: #6a11cb;
+      font-weight: bold;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(106, 17, 203, 0.4);
+    }
+
+    /* Quote styles */
+    .quote {
+      background: linear-gradient(135deg, #e6ccff 0%, #d1a6ff 100%);
+      padding: 20px;
+      border-left: 5px solid #6a11cb;
+      margin: 20px 0;
+      border-radius: 8px;
+      font-style: italic;
+    }
+
+    .quote-author {
+      text-align: right;
+      font-weight: bold;
+      color: #6a11cb;
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      border-radius: 10px 10px 0 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-wrap: wrap;
+      }
+      
+      .navbar button {
+        margin: 5px;
+        font-size: 14px;
+      }
+      
+      .section {
+        padding: 40px 15px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <button onclick="showSection('home')"><i class="fas fa-home"></i> Accueil</button>
+    <button onclick="showSection('inspiration')"><i class="fas fa-star"></i> Inspiration</button>
+    <button onclick="showSection('messages')"><i class="fas fa-envelope"></i> Message</button>
+    <button onclick="showSection('vision')"><i class="fas fa-eye"></i> Vision</button>
+    <button onclick="showSection('citations')"><i class="fas fa-quote-right"></i> Citations</button>
+    <button onclick="showSection('gallery')"><i class="fas fa-images"></i> Galerie</button>
+  </div>
+
+  <!-- Accueil -->
+  <div id="home" class="section active">
+    <div class="hero">
+      <img src="images/kadhyToure.jpg" alt="Kadhy Touré">
+      <h1>Kadhy Touré - Mon Inspiration</h1>
+    </div>
+    
+    <div class="inspiration-text">
+      <h2>Une force silencieuse ❤️</h2>
+      <p>Il y a des rencontres qui ne se font pas toujours en personne, mais qui changent une vie. Découvrir <span class="highlight">Kadhy Touré</span> a été pour moi ce déclic. Son histoire, son vécu, son enfance difficile… tout résonne en moi comme un miroir.</p>
+      
+      <p>C'est comme si elle racontait ma propre histoire, mot pour mot. Comme si, à travers son parcours, elle me donnait l'autorisation de croire, de rêver, de persévérer. Depuis que je l'ai connue, je suis devenue une véritable bosseuse, déterminée, alignée avec ma vision.</p>
+      
+      <p>Parfois, j'ai même l'impression de vivre à travers elle — ou plutôt, de vivre grâce à ce qu'elle m'a permis de voir en moi.</p>
+      
+      <p>Elle m'a prouvé qu'on peut partir de rien, et devenir tout. Elle est la preuve qu'on peut transformer les rêves en réalités, la douleur en puissance, l'échec en leçon, et les doutes en énergie.</p>
+      
+      <p>Aujourd'hui, je ne lâche rien. Parce que si elle l'a fait, je le peux aussi.</p>
+      
+      <p>Merci à toi <span class="highlight">Kadhy Touré</span>. Tu ne le sais peut-être pas, mais tu as changé une vie : la mienne.</p>
+    </div>
+  </div>
+
+  <!-- Inspiration -->
+  <div id="inspiration" class="section">
+    <h2>Pourquoi Kadhy Touré est mon inspiration ✨</h2>
+    
+    <div class="inspiration-text">
+      <p>Kadhy Touré, tu es bien plus qu'une simple idole pour moi. Tu incarnes la force, la détermination et la grâce, et ton parcours exceptionnel continue d'inspirer ma vie quotidienne.</p>
+      
+      <p>À travers tes actions et tes réalisations, tu démontres que rien n'est impossible quand on croit en ses rêves. Ta persévérance face aux défis m'enseigne à ne jamais abandonner, même lorsque les obstacles semblent insurmontables.</p>
+      
+      <p>Tu possèdes cette rare capacité à transformer les difficultés en opportunités, et ton courage face à l'adversité est une leçon de vie pour tous ceux qui te connaissent. Ta générosité d'esprit et ton authenticité rayonnent bien au-delà de tes accomplissements.</p>
+      
+      <p>Chaque jour, tu me rappelles par ton exemple qu'il faut poursuivre ses passions avec conviction, rester fidèle à ses valeurs et avancer avec bienveillance. Tu es un modèle de résilience et d'intégrité.</p>
+      
+      <p>Merci d'exister et de partager ta lumière avec le monde. Tu n'es pas seulement une inspiration, mais une véritable force motrice qui pousse ceux qui t'admirent à devenir une meilleure version d'eux-mêmes.</p>
+    </div>
+  </div>
+
+  <!-- Messages -->
+  <div id="messages" class="section">
+    <h2>Message à Kadhy 💌</h2>
+    
+    <div class="message-text">
+      <p>Chère Kadhy,</p>
+      
+      <p>Je tiens à te partager à quel point tu as marqué ma vie. Je me souviens encore de la première fois où j'ai découvert ton parcours, ton talent et ta personnalité rayonnante. Ce fut une révélation - trouver en toi une source authentique d'inspiration et de force.</p>
+      
+      <p>C'était pendant l'une des périodes les plus sombres de ma vie, alors que je traversais une dépression profonde. Dans ce brouillard où tout semblait sans espoir, ta lumière a percé. Tes paroles, ton histoire ont été une bouée de sauvetage qui m'a aidé à garder la tête hors de l'eau.</p>
+      
+      <p>Tu as été la première star que j'ai rencontrée (même si seulement à travers ton travail) qui partage exactement la même religion, les mêmes valeurs, et qui a vécu presque la même enfance que moi. Quand tu parles des moqueries que tu as subies pendant ton enfance, de tes rêves et de tes combats, c'est comme si tu racontais mon propre histoire. Chaque mot résonne en moi, car j'ai traversé ces mêmes épreuves et je continue de les vivre.</p>
+      
+      <p>Au fil du temps, mon admiration n'a fait que grandir. J'ai appris à t'aimer non seulement pour tes talents, mais pour la personne que tu es : résiliente, passionnée et profondément humaine. Tu es devenue bien plus qu'une idole pour moi ; tu es devenue une lumière qui guide mes propres aspirations.</p>
+      
+      <p>En ces moments difficiles où tu traverses le deuil de ton père, je tiens à te présenter mes plus sincères condoléances. Sache que mes pensées t'accompagnent dans cette épreuve. La perte d'un parent est une douleur incomparable, et j'admire encore plus ta force de continuer à avancer malgré tout.</p>
+      
+      <p>Quelles que soient les circonstances, sache que je crois en toi. Même si parfois tu pouvais sentir que le soutien fléchit, retiens ceci : je vis à travers ton parcours. Chacune de tes réalisations est aussi un peu la mienne. Chacun de tes succès me remplit de fierté.</p>
+      
+      <p>Continue d'avancer, Kadhy. Continue de briller de mille feux. Le chemin peut parfois sembler solitaire, mais sache que je serai toujours là, te suivant des yeux et t'encourageant de tout cœur.</p>
+      
+      <p>Avec tout mon respect et mon affection,</p>
+      <p>[Votre prénom]</p>
+    </div>
+  </div>
+
+  <!-- Vision -->
+  <div id="vision" class="section">
+    <h2>Ma Vision ❤️</h2>
+    
+    <div class="vision-text">
+      <p>Ma vision est de créer un hommage profond et authentique qui reflète l'impact transformateur que Kadhy Touré a eu sur ma vie. À travers cette plateforme, je souhaite :</p>
+      
+      <p><span class="highlight">1. Honorer son parcours inspirant</span><br>
+      Célébrer son courage, sa persévérance et son authenticité qui ont illuminé mon propre chemin. Son histoire résonne en moi comme un témoignage vivant de la possibilité de transformer les épreuves en force.</p>
+      
+      <p><span class="highlight">2. Partager notre connexion unique</span><br>
+      Exprimer cette rencontre spirituelle rare avec une personnalité publique qui partage ma foi, mes valeurs et des expériences de vie similaires. Cette résonance unique mérite d'être honorée.</p>
+      
+      <p><span class="highlight">3. Témoigner de son influence salvatrice</span><br>
+      Reconnaître comment sa lumière a percé mes moments les plus sombres, offrant espoir et inspiration quand je naviguais dans les eaux troubles de la dépression.</p>
+      
+      <p><span class="highlight">4. Construire un legs de résilience</span><br>
+      Créer un espace qui immortalise son message de persévérance - particulièrement important alors qu'elle traverse l'épreuve du deuil de son père.</p>
+      
+      <p><span class="highlight">5. Affirmer un soutien inconditionnel</span><br>
+      Manifester ma fidélité indéfectible, lui signifiant qu'elle n'est jamais seule dans son parcours, même lorsque le chemin semble solitaire.</p>
+      
+      <p><span class="highlight">6. Célébrer la puissance de l'identification</span><br>
+      Montrer comment voir nos propres luttes reflétées chez quelqu'un d'autre peut devenir une source de guérison et de force insoupçonnée.</p>
+      
+      <p>Cette vision dépasse le simple hommage - il s'agit de créer un témoignage vivant de la façon dont une âme peut en illuminer une autre à travers l'authenticité, la foi partagée et la résilience transformée en lumière.</p>
+    </div>
+  </div>
+
+  <!-- Citations -->
+  <div id="citations" class="section">
+    <h2>Citations Inspirantes 💫</h2>
+    
+    <div class="citation-text">
+      <div class="quote">
+        <h3>Citations de kadhyToure</h3>
+        
+      </div>
+        "Tu es la seule personne qui détient le pouvoir de changer ta vie."
+        <div class="quote-author">- Kadhy Touré</div>
+      </div>
+      
+      <h3>Citations d'Oprah Winfrey</h3>
+      <div class="quote">
+        "Tourne tes blessures en sagesse."
+        <div class="quote-author">- Oprah Winfrey</div>
+      </div>
+      
+      <div class="quote">
+        "La plus grande aventure que tu puisses vivre est de vivre la vie de tes rêves."
+        <div class="quote-author">- Oprah Winfrey</div>
+      </div>
+      
+      <h3>Citations de Beyoncé</h3>
+      <div class="quote">
+        "Le pouvoir le plus puissant qu'une femme puisse posséder est la confiance en elle-même."
+        <div class="quote-author">- Beyoncé</div>
+      </div>
+      
+      <div class="quote">
+        "Quand tu aimes et acceptes qui tu es, tout devient possible."
+        <div class="quote-author">- Beyoncé</div>
+      </div>
+      
+      <h3>Citations de Kadhy Touré</h3>
+      
+      <div class="quote">
+        "Nos différences ne sont pas des faiblesses, mais les couleurs uniques qui composent notre lumière."
+        <div class="quote-author">- Kadhy Touré</div>
+      </div>
+
+      <div class="quote">
+        "Fait attention à ce que tu tolères car tu montres aux autres comment te traiter. "
+        <div class="quote-author">- Kadhy Toure</div>
+      </div>
+
+      <div class="quote">
+        "Chaque épreuve traversée est une graine de force qui grandit en nous."
+        <div class="quote-author">- Kadhy Touré</div>
+      </div>
+
+      <div class="quote">
+        "Avec le temps tu comprends que les personnes les plus importantes sont celles qui te prouvent que tu l'es aussi."
+        <div class="quote-author">- Kadhy Touré</div>
+      </div>
+
+      <div class="quote">
+        "Dans cette vie,nous ne sommes pas dans le meme bateau. Nous sommes dans la même tempête. D'autres ont des yachts, d'autres ont des canoës et d'autres ce noient. Soit gentils et aide ceux que tu peux."
+        <div class="quote-author">- Kadhy Touré</div>
+      </div>
+      
+      <div class="quote">
+        "Ce que tu fais dans le noir… et tu sais que quand on allume la lumière, ce n'est pas bon. Il faut pas faire."
+        <div class="quote-author">- Kadhy Touré</div>
+      </div>
+      <div class="quote">
+        "Ton bien être ce n'est pas seulement ce que tu manges, c'est aussi ce que tu regardes,ce que tu écoutes,ce que tu lis et ceux avec qui tu traines."
+        <div class="quote-author">- Kadhy Touré</div>
+      </div>
+      <div class="quote">
+        "Pour reussir sa vie, il y'a des rélations qu'ils faut arrêter, des endroits à eviter et des gens a ne plus frequentés."
+        <div class="quote-author">- Kadhy Touré</div>
+      </div>
+      <div class="quote">
+        "Fais de toi une priorité et ne laisse plus le regardes des autres changer la personnes incroyables que tu es ."
+        <div class="quote-author">- Kadhy Touré</div>
+      </div>
+      <div class="quote">
+        "Entourez vous des personnes qui pourront dire votre nom dans une salle plein d'opportunités."
+        <div class="quote-author">- Kadhy Touré</div>
+      </div>
+      <div class="quote">
+        "Ton esprit est un aimant. Si tu penses bénédictions tu attires les bénédictions.Si tu penses problèmes, tu attires problèmes."
+        <div class="quote-author">- Kadhy Touré</div>
+      </div>
+      <h3>Citation spéciale pour Kadhy</h3>
+      <div class="quote">
+        "Comme Oprah et Beyoncé, tu portes en toi cette flamme qui transforme les défis en triomphes. Continue d'illuminer le monde de ta présence unique."
+      </div>
+    </div>
+  </div>
+
+  <!-- Galerie -->
+  <div id="gallery" class="section">
+    <h2>Galerie Photos 📸</h2>
+    
+    <div class="gallery">
+      <img src="images/475107621_1152612332898754_3922482679052770904_n.jpg" alt="photo de Kadhy">
+      <img src="images/beaute.jpg" alt="Kadhy inspirante">
+      <img src="images/475139331_1155420169284637_1268928215745939852_n.jpg" alt="Femme forte">
+      <img src="images/kadhyT.jpg" alt="Source d'inspiration">
+      <img src="images/kadhy toure.jpg" alt="">
+      <img src="images/joie.jpg" alt="">
+      <img src="images/idole a vie.jpg" alt="">
+      <img src="images/toure.jpg" alt="">
+      <img src="images/kadhy.jpg" alt="">
+      <img src="images/123.jpg" alt="">
+      <img src="images/femme.jpg" alt="">
+      <img src="images/rouge.jpg" alt="">
+      <img src="images/avance.jpg" alt="">
+      <img src="images/sagesse.jpg" alt="">
+      <img src="images/succé.jpg" alt="">
+      <img src="images/tchaff.jpg" alt="">
+      <img src="images/top.jpg" alt="">
+      <img src="images/type.jpg" alt="">
+      <img src="images/voile.jpg" alt="">
+      <img src="images/476343552_1162224408604213_3435038443348996248_n.jpg" alt="">
+      <img src="images/classe.jpg" alt="">
+      <img src="images/belle.jpg" alt="">
+      <img src="images/forever.jpg" alt="">
+      <img src="images/avance.jpg" alt="">
+
+    </div>
+  </div>
+
+  <footer>
+    <p>Hommage à Kadhy Touré - Créé avec ❤️</p>
+    <p>© 2025 - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      
+      // Scroll to top
+      window.scrollTo(0, 0);
+    }
+  </script>
+
+</body>
+</html>
